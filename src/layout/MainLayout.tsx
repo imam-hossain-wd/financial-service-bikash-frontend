@@ -7,7 +7,9 @@ const MainLayout = () => {
   return (
     <div>
       <Navbar />
+      <div className="h-auto">
       <Outlet />
+      </div>
       <Footer />
     </div>
   );

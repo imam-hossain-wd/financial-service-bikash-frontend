@@ -1,13 +1,19 @@
 export type ISignupProps = {
-    name: string;
-    number:string;
-    email: string;
-    pin: string;
-    account_type:string;
-    nid:number;
+  name: string;
+  number: string;
+  email: string;
+  pin: string;
+  account_type: string;
+  nid: number;
 };
 
 export type ILoginProps = {
-    number: string;
-    pin: string;
-  };
+  number: string;
+  pin: string;
+};
+
+export type ITransationItems = {
+  name: string;
+  image: string;
+  href:string
+};
