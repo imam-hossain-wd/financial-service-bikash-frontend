@@ -2,17 +2,17 @@ import { Button } from "antd";
 import FormInput from "../../components/forms/FormInputField";
 import Form from "../../components/forms/Form";
 import { SubmitHandler } from "react-hook-form";
-import { ISendMoneyProps } from "../../types";
+import { ITransationFormProps } from "../../types";
 
 
 
 const Sendmoney = () => {
 
-    const onSubmit: SubmitHandler<ISendMoneyProps> = async (data) => {
+    const onSubmit: SubmitHandler<ITransationFormProps> = async (data) => {
         try {
           console.log(data);
-        } catch (error: any) {
-          console.error(error.message);
+        } catch (error) {
+          console.error(error);
         }
       };
     

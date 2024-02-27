@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import { Button } from "antd";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { SubmitHandler } from "react-hook-form";
 import { ILoginProps } from "../../types";
 import Form from "../../components/forms/Form";
@@ -11,9 +11,9 @@ import FormInput from "../../components/forms/FormInputField";
 // @ts-ignore
 
 const Login = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const from = location.state?.from?.pathname || "/";
 
   const onSubmit: SubmitHandler<ILoginProps> = async (data) => {
     try {

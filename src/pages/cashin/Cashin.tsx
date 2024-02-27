@@ -6,7 +6,7 @@ import { ITransationFormProps } from "../../types";
 
 
 
-const Cashout = () => {
+const Cashin = () => {
 
     const onSubmit: SubmitHandler<ITransationFormProps> = async (data) => {
         try {
@@ -25,7 +25,7 @@ const Cashout = () => {
             marginBottom: "10px",
           }} className="w-full lg:w-[35%] mb-10 p-5 mx-auto mt-20">
 
-            <p className="text-md text-center mb-3">Cash Withdrawal Request Form</p>
+            <p className="text-md text-center mb-3">Cash Deposit Form</p>
              <Form submitHandler={onSubmit}>
             <div className="">
               <div className="mb-3">
@@ -65,4 +65,4 @@ const Cashout = () => {
     );
 };
 
-export default Cashout;
+export default Cashin;
