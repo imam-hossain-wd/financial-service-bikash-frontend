@@ -1,14 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Dropdown } from "antd";
-import { Link, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { LoginOutlined, UserOutlined } from "@ant-design/icons";
-import { useState } from "react";
+
 
 
 const Navbar = () => {
     
-  const location = useLocation();
-
   const role = "user";
   const accessToken = false;
 

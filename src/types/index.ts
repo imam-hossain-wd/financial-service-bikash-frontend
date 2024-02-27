@@ -17,3 +17,9 @@ export type ITransationItems = {
   image: string;
   href:string
 };
+
+export type ISendMoneyProps = {
+    number :string;
+    pin:string;
+    amount:number
+    }

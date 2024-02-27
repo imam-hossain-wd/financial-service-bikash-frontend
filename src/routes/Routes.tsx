@@ -5,6 +5,7 @@ import ErrorElement from "../pages/errorElement/ErrorElement";
 import Signup from "../pages/signup/Signup";
 import Login from "../pages/login/Login";
 import Transation from "../pages/transation/Transation";
+import Sendmoney from "../pages/sendmoney/Sendmoney";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
         {
             path: 'transation',
             element: <Transation/>
+        }, 
+        {
+            path: 'send-money',
+            element: <Sendmoney/>
         }, 
       
       
