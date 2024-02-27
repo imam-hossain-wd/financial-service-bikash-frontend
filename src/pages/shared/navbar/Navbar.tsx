@@ -3,12 +3,10 @@ import { Button, Dropdown } from "antd";
 import { Link} from "react-router-dom";
 import { LoginOutlined, UserOutlined } from "@ant-design/icons";
 
-
-
 const Navbar = () => {
     
   const role = "user";
-  const accessToken = false;
+  const accessToken = true;
 
   const accountItems = [
     {
