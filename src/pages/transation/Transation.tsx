@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ITransationItems } from "../../types";
+import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 
 
 
@@ -24,8 +25,25 @@ const Transation = () => {
     ]
 
 
+
+
     return (
         <div className="mt-10 w-full lg:w-[70%] mx-auto">
+
+            <div className="my-5 ml-10">
+            <BreadCrumb
+        items={[
+          {
+            label: "Home",
+            link: "/",
+          },
+          {
+            label: "Transation",
+            link: "/transation",
+          },
+        ]}
+      />
+            </div>
             
             <div className="flex flex-col md:flex-row justify-around items-center ">
                 {

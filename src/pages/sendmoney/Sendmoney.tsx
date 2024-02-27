@@ -3,6 +3,7 @@ import FormInput from "../../components/forms/FormInputField";
 import Form from "../../components/forms/Form";
 import { SubmitHandler } from "react-hook-form";
 import { ITransationFormProps } from "../../types";
+import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 
 
 
@@ -18,12 +19,31 @@ const Sendmoney = () => {
     
 
     return (
-        <div  style={{
+        <section className="w-full lg:w-[35%] mb-10 p-5 mx-auto mt-10">
+                  <div className="my-5 ml-0">
+      <BreadCrumb
+  items={[
+    {
+      label: "Home",
+      link: "/",
+    },
+    {
+      label: "Transation",
+      link: "/transation",
+    },
+    {
+      label: "Send Money",
+      link: "/send-money",
+    },
+  ]}
+/>
+      </div>
+             <div  style={{
             border: "1px solid #d9d9d9",
             borderRadius: "5px",
             padding: "15px",
             marginBottom: "10px",
-          }} className="w-full lg:w-[35%] mb-10 p-5 mx-auto mt-20">
+          }} className=" p-5 ">
 
             <p className="text-md text-center mb-3">Payment Transfer Authorization Form</p>
              <Form submitHandler={onSubmit}>
@@ -62,6 +82,8 @@ const Sendmoney = () => {
           </Form>
             
         </div>
+        </section>
+       
     );
 };
 
