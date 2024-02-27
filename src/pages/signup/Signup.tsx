@@ -4,13 +4,13 @@ import { Button } from "antd";
 import FormInput from "../../components/forms/FormInputField";
 import Form from "../../components/forms/Form";
 import { SubmitHandler } from "react-hook-form";
-import { FormValues } from "../../types";
 import { Link } from "react-router-dom";
 import FormSelectField from "../../components/forms/FormSelectField";
 import { AccountOptions } from "../../constants/global";
+import { ISignupProps } from "../../types";
 
 const Signup = () => {
-  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+  const onSubmit: SubmitHandler<ISignupProps> = async (data) => {
     try {
       console.log(data);
     } catch (error) {
@@ -60,6 +60,14 @@ const Signup = () => {
                   placeholder="Email"
                 />
               </div>
+              <div className="mb-3">
+                <FormInput
+                  name="nid"
+                  type="text"
+                  size="large"
+                  placeholder="Enter Nid"
+                />
+              </div>
 
               <div className="mb-5">
                 <FormInput
@@ -87,7 +95,7 @@ const Signup = () => {
 
           <div className="mt-5 flex justify-center">
             <p className="text-[12px] font-semibold">
-              New to CarDev?{" "}
+              Already Have an Account?{" "}
               <Link to="/login" className="text-primary underline">
                 Login
               </Link>
