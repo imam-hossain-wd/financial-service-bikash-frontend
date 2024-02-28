@@ -2,13 +2,17 @@
 import { Button, Dropdown } from "antd";
 import { Link} from "react-router-dom";
 import { LoginOutlined, UserOutlined } from "@ant-design/icons";
-import { useAppSelector } from "../../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { clearAccessToken } from "../../../redux/slice/authSlice";
 
 
 const Navbar = () => {
+
+  const dispatch = useAppDispatch()
   //@ts-ignore
   const accessToken = useAppSelector((state) => state?.auth?.accessToken);
 
+  
   const role = "user";
   const accountItems = [
     {
@@ -25,7 +29,9 @@ const Navbar = () => {
             <Button type="text">
               <Link to={`/${role}/manage-user`}> Manage User</Link>
             </Button>
-            <Button danger type="text">
+            <Button
+            onClick={()=>dispatch(clearAccessToken())}
+            danger type="text">
               Log out
             </Button>
           </div>
