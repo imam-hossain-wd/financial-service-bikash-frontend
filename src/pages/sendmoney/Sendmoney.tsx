@@ -4,14 +4,36 @@ import Form from "../../components/forms/Form";
 import { SubmitHandler } from "react-hook-form";
 import { ITransationFormProps } from "../../types";
 import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
+import { useSendMoneyMutation } from "../../redux/api/transationApi";
+import { getUserInfo } from "../../utils/auth.service";
 
 
 
 const Sendmoney = () => {
 
+  const [sendMoney]=useSendMoneyMutation()
+  const user = getUserInfo()
+          // console.log(user, 'uuuuuuu');
+
+
     const onSubmit: SubmitHandler<ITransationFormProps> = async (data) => {
         try {
           console.log(data);
+
+          const sendMoneyData = {
+            //@ts-ignore
+            senderId:user?._id,
+            number:data.number,
+            pin:data.pin,
+            amount:data.amount
+          }
+          console.log(sendMoneyData, 'sendmoney res...');
+
+       const res = await sendMoney({ ...sendMoneyData }).unwrap();
+       
+       console.log(res, 'sendmoney res...');
+        
+
         } catch (error) {
           console.error(error);
         }

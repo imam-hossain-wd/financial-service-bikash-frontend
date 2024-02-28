@@ -30,15 +30,11 @@ const userData = {
   pin:data.pin,
   deviceId: "12345"
 }
-
-      const res = await logInUser({ ...userData }).unwrap();
-   
-      if (res?.data?.accessToken) {
-        storeUserInto({ accessToken: res?.data?.accessToken });
-        dispatch(setAccessToken(res?.data?.accessToken));
+      const res = await logInUser({ ...userData }).unwrap();   
+      if (res?.accessToken) {
+        storeUserInto({ accessToken: res?.accessToken });
+        dispatch(setAccessToken(res?.accessToken));
         message.success("Login Successful");
-
-
       }
     } catch (error: any) {
       console.error(error.message);

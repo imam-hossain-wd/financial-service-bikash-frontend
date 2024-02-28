@@ -1,8 +1,4 @@
 /* eslint-disable no-empty */
-
-
-
-
 import axios from "axios";
 import { getFromLocalStorage } from "../../utils/localStorage";
 import { authKey } from "../../utils/auth.service";
