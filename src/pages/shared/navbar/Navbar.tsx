@@ -2,12 +2,14 @@
 import { Button, Dropdown } from "antd";
 import { Link} from "react-router-dom";
 import { LoginOutlined, UserOutlined } from "@ant-design/icons";
+import { useAppSelector } from "../../../redux/hooks";
+
 
 const Navbar = () => {
-    
-  const role = "user";
-  const accessToken = true;
+  //@ts-ignore
+  const accessToken = useAppSelector((state) => state?.auth?.accessToken);
 
+  const role = "user";
   const accountItems = [
     {
       key: "1",
@@ -15,10 +17,13 @@ const Navbar = () => {
         <div>
           <div className="flex flex-col">
             <Button type="text">
-              <Link to={`/dashboard/${role}/account`}> Account</Link>
+              <Link to={`/${role}/account`}> Account</Link>
             </Button>
             <Button type="text">
-              <Link to="/dashboard"> Dashboard</Link>
+              <Link to={`/${role}/transation-history`}> Transation History</Link>
+            </Button>
+            <Button type="text">
+              <Link to={`/${role}/manage-user`}> Manage User</Link>
             </Button>
             <Button danger type="text">
               Log out

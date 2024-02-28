@@ -1,9 +1,8 @@
 import { baseApi } from "./api/baseApi";
-import counterSlice from "./slice/counterSlice";
+import { authSlice } from "./slice/authSlice";
 
 export const rootReducer = {
-
-  counter:counterSlice,
+  auth:authSlice.reducer,
   [baseApi.reducerPath]: baseApi.reducer,
 
 };

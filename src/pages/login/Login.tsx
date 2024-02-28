@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { Button } from "antd";
+import { Button, message } from "antd";
 import { Link} from "react-router-dom";
 import { SubmitHandler } from "react-hook-form";
 import { ILoginProps } from "../../types";
 import Form from "../../components/forms/Form";
 import FormInput from "../../components/forms/FormInputField";
+import { useAppDispatch } from "../../redux/hooks";
+import { useLogInUserMutation} from "../../redux/api/authApi";
+import { storeUserInto } from "../../utils/auth.service";
+import { setAccessToken } from "../../redux/slice/authSlice";
 
 // @ts-ignore
 
@@ -15,9 +19,27 @@ const Login = () => {
   // const location = useLocation();
   // const from = location.state?.from?.pathname || "/";
 
+  const dispatch = useAppDispatch()
+  const [logInUser] = useLogInUserMutation();
+
   const onSubmit: SubmitHandler<ILoginProps> = async (data) => {
     try {
-      console.log(data);
+   
+const userData = {
+  number:data.number,
+  pin:data.pin,
+  deviceId: "12345"
+}
+
+      const res = await logInUser({ ...userData }).unwrap();
+   
+      if (res?.data?.accessToken) {
+        storeUserInto({ accessToken: res?.data?.accessToken });
+        dispatch(setAccessToken(res?.data?.accessToken));
+        message.success("Login Successful");
+
+
+      }
     } catch (error: any) {
       console.error(error.message);
     }

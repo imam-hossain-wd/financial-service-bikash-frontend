@@ -8,6 +8,9 @@ import Transation from "../pages/transation/Transation";
 import Sendmoney from "../pages/sendmoney/Sendmoney";
 import Cashout from "../pages/cashout/Cashout";
 import Cashin from "../pages/cashin/Cashin";
+import Account from "../pages/account/Account";
+import TransationHistory from "../pages/transationHistory/TransationHistory";
+import Manageuser from "../pages/manageuser/Manageuser";
 
 
 export const router = createBrowserRouter([
@@ -45,10 +48,23 @@ export const router = createBrowserRouter([
             path: 'cashin',
             element: <Cashin/>
         }, 
+        {
+            path: '/:user/account',
+            element: <Account />
+        }, 
+        {
+            path: '/:user/transation-history',
+            element: <TransationHistory />
+        }, 
+        {
+            path: '/:admin/manage-user',
+            element: <Manageuser />
+        }, 
       
       
       
       ]
   },
+  
  
 ]);
