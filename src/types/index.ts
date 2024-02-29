@@ -42,7 +42,8 @@ export type ITransationFormProps = {
     };
     
     export type IGenericErrorResponse = {
-      statusCode: number;
+      statusCode?: number;
       message: string;
+      success?:string;
       errorMessages: IGenericErrorMessage[];
     };
